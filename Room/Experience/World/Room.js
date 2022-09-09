@@ -37,6 +37,7 @@ export default class Room{
                 console.log(child.material);
                 console.log(child);
                 // this.scene.add(child.material)
+                //  is the same as this.scene.add(child.material)
         }
         });
 
