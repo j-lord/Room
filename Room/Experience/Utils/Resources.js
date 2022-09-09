@@ -49,7 +49,7 @@ constructor(assets) {
                 this.video[asset.name].play();
 
                 this.video.texture[asset.name] = new THREE.VideoTexture(this.video[asset.name]);
-                this.video.texture[asset.name].flipY = true; // may not need this
+                // this.video.texture[asset.name].flipY = true; // may not need this
                 this.video.texture[asset.name].minFilter = true;
                 this.video.texture[asset.name].magFilter = THREE.NearestFilter;
                 this.video.texture[asset.name].generateMipmaps = false;

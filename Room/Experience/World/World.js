@@ -3,6 +3,10 @@ import Experience from "../Experience.js"
 
 import Room from "./Room.js"
 import Environment from "./Environment.js"
+import Screen from './Screen.js'
+
+// Try this
+import Screen from './Screen.js'
 
 export default class World{
     constructor(){
@@ -12,6 +16,8 @@ export default class World{
         this.canvas = this.experience.canvas;
         this.camera = this.experience.camera;
         this.resources = this.experience.resources;
+
+        
 
         this.resources.on("ready", () => {
             this.environment = new Environment();

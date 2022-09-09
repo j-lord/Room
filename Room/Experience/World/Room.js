@@ -29,16 +29,22 @@ export default class Room{
 
             if (child.name === "Water") { // this is why naming is important in blender
                 child.material = new THREE.MeshPhysicalMaterial(); // this is for the fish tank
-                child.material.roughness = 0;                
-                child.material.color.set(0xffffff);
-                child.material.ior = 3;
+                child.material.roughness = 0;
+                child.material.color.set(0x549dd2);
+                child.material.ior = 8;
                 child.material.tranmission = 1;
-                child.material.opacity = 1;
-                console.log(child.material);
-                console.log(child);
-                // this.scene.add(child.material)
-                //  is the same as this.scene.add(child.material)
+                child.material.transparent = true;
+                child.material.opacity = 0.4;
         }
+
+        if (child.name === "Screen") {
+            console.log(child)
+            // const texture = new THREE.VideoTexture(this.resources.items.screen);
+            child.material = new THREE.MeshBasicMaterial({  // this is for the computer screen
+                map: this.resources.items.screen,
+            });
+        }
+
         });
 
         this.scene.add(this.actualRoom);
