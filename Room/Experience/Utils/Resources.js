@@ -41,19 +41,24 @@ constructor(assets) {
                 this.video.texture = {};
 
                 this.video[asset.name] = document.createElement("video");
-                this.video[asset.name].src = asset.path;
-                this.video[asset.name].playsInline = true;
                 this.video[asset.name].muted = true;
-                this.video[asset.name].autoplay = true;
                 this.video[asset.name].loop = true;
+                this.video[asset.name].controls = true;
+                this.video[asset.name].playsInline = true;
+                this.video[asset.name].autoplay = true;
+                this.video[asset.name].src = asset.path;
                 this.video[asset.name].play();
 
                 this.video.texture[asset.name] = new THREE.VideoTexture(this.video[asset.name]);
-                // this.video.texture[asset.name].flipY = true; // may not need this
-                this.video.texture[asset.name].minFilter = true;
+                console.log("Name")
+                console.log(this.video.texture[asset.name])
+                this.video.texture[asset.name].flipY = false; // may not need this
+                // this.video.texture[asset.name].minFilter = true;
                 this.video.texture[asset.name].magFilter = THREE.NearestFilter;
                 this.video.texture[asset.name].generateMipmaps = false;
                 this.video.texture[asset.name].encoding = THREE.sRGBEncoding;
+
+                // now just need to flip the video or the texture 
 
                 this.singleAssetLoaded(asset, this.video.texture[asset.name]); // load the video texture
 
