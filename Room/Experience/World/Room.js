@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import Experience from "../Experience.js"
 import GSAP from "gsap"
 
-
 export default class Room{
     constructor(){
         this.experience = new Experience();
@@ -44,7 +43,7 @@ export default class Room{
                 child.material.tranmission = 1;
                 child.material.transparent = true;
                 child.material.opacity = 0.4;
-        }
+            }
 
         if (child.name === "Screen") {
             child.material = new THREE.MeshBasicMaterial({  // this is for the computer screen
@@ -59,7 +58,7 @@ export default class Room{
     }
     // this is for the fish tank animation
     setAnimation(){
-    console.log(this.room.animations)
+    // console.log(this.room.animations)
     this.mixer = new THREE.AnimationMixer(this.actualRoom);
     this.swim = this.mixer.clipAction(this.room.animations[0]);
     this.swim.play();
