@@ -41,6 +41,7 @@ export default class Room{
                 child.material.color.set(0x549dd2);
                 child.material.ior = 8;
                 child.material.tranmission = 1;
+                // for some reason, this line needed to be added as well 
                 child.material.transparent = true;
                 child.material.opacity = 0.4;
             }
