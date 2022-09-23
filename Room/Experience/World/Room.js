@@ -58,6 +58,7 @@ export default class Room{
         this.actualRoom.scale.set(0.1, 0.1, 0.1);
     }
     // this is for the fish tank animation
+    // still need to figure out how to make the fish move correctly
     setAnimation(){
     // console.log(this.room.animations)
     this.mixer = new THREE.AnimationMixer(this.actualRoom);
