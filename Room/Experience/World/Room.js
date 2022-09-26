@@ -59,6 +59,8 @@ export default class Room{
     }
     // this is for the fish tank animation
     // still need to figure out how to make the fish move correctly
+    // https://youtu.be/nfvPq__Prts?t=617
+    // look at the link above for animation reference for bouncing
     setAnimation(){
     // console.log(this.room.animations)
     this.mixer = new THREE.AnimationMixer(this.actualRoom);
