@@ -54,7 +54,7 @@ export default class Screens
         this.mesh = this.resources.items
         // console.log(this.model)
         this.model.mesh = this.mesh
-        this.model.mesh.material = this.model.materiala
+        this.model.mesh.material = this.model.material
         this.scene.add(this.model.mesh)
     }
 

@@ -16,8 +16,6 @@ export default class Controls{
         GSAP.registerPlugin(ScrollTrigger); // need to register plugin before using it
 
         this.setPath();
-        
-  
 
 
         // this.progress = 0;

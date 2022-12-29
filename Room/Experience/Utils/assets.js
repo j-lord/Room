@@ -1,3 +1,5 @@
+
+
 export default [
     {name: "room",
     type: "glbModel",

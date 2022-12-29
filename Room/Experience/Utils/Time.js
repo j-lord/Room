@@ -1,3 +1,7 @@
+// Need to add comments like this to every file 
+// So that we can understand what is going on
+// and see what we can copy / paste
+
 import { EventEmitter } from "events";
 
 export default class Time extends EventEmitter{

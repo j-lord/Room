@@ -4,6 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import Experience from "../Experience.js";
 
+
 export default class Resources extends EventEmitter{
 constructor(assets) { 
     super(); // need to call super to access the EventEmitter

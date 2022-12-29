@@ -15,6 +15,7 @@ constructor() {
         this.aspect = this.width / this.height;
         this.pixelRatio = Math.min(window.devicePixelRatio, 2);
         this.emit("resize");
+        
     });
     }
 }
