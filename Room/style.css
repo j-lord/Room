@@ -73,7 +73,7 @@ html, body {
   align-items: center;
   background-color: var(--primary-pink);
   border-radius: 999px;
-  margin: 0 12px;
+  margin: 0px 12px;
   border: none;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -89,7 +89,7 @@ html, body {
 }
 
 .toggle-button:hover .toggle-circle{
-  transform: scale(1.2);
+  transform: scale(0.9);
 }
 
 .slide{

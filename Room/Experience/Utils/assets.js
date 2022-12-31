@@ -1,4 +1,4 @@
-
+// would like this to automatically address any models in file 
 
 export default [
     {name: "room",

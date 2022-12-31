@@ -2,6 +2,11 @@
 import * as THREE from 'three';
 import Experience from "./Experience.js"
 
+// import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+// import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+// import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+
+
 export default class Camera{
     constructor(){
         this.experience = new Experience();
@@ -26,7 +31,25 @@ export default class Camera{
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         this.renderer.setSize(this.sizes.width, this.sizes.height);
-        this.renderer.setPixelRatio(this.sizes.pixelRatio);
+        this.renderer.setPixelRatio(Math.min(this.sizes.pixelRatio, 2));
+        this.renderer.gammaOutput = true;
+        this.renderer.outputEncoding = THREE.sRGBEncoding
+        this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        this.renderer.toneMappingExposure = 1.5;
+        this.renderer.setClearColor(0x000000, 0);
+        // // bloom pass
+        // this.composer = new EffectComposer(this.renderer);
+        // this.composer.addPass(new RenderPass(this.scene, this.camera.orthographicCamera));
+        // this.bloomPass = new UnrealBloomPass(new THREE.Vector2(this.sizes.width, this.sizes.height), 1.5, 0.4, 0.85);
+        // // this.bloomPass.threshold = 1;
+        // // this.bloomPass.strength = 1.5;
+        // // this.bloomPass.radius = 5;
+        // this.composer.addPass(this.bloomPass);
+        
+        
+
+        // THREE.ColorManagement.legacyMode = false;
+
 
     }
 
@@ -40,22 +63,22 @@ export default class Camera{
         this.renderer.render(this.scene, this.camera.orthographicCamera);
         // this.renderer.render(this.scene, this.camera.perspectiveCamera);
         // second screen on window
-        // this.renderer.setScissorTest(true);
-        // this.renderer.setViewport(
-        //     this.sizes.width - this.sizes.width / 3, 
-        //     this.sizes.height - this.sizes.height / 3, 
-        //     this.sizes.width / 3,
-        //     this.sizes.height / 3);
+        this.renderer.setScissorTest(true);
+        this.renderer.setViewport(
+            this.sizes.width - this.sizes.width / 3, 
+            this.sizes.height - this.sizes.height / 3, 
+            this.sizes.width / 3,
+            this.sizes.height / 3);
  
-        // this.renderer.setScissor(
-        //     this.sizes.width - this.sizes.width / 3, 
-        //     this.sizes.height - this.sizes.height / 3, 
-        //     this.sizes.width / 3,
-        //     this.sizes.height / 3);
+        this.renderer.setScissor(
+            this.sizes.width - this.sizes.width / 3, 
+            this.sizes.height - this.sizes.height / 3, 
+            this.sizes.width / 3,
+            this.sizes.height / 3);
 
 
-        // this.renderer.render(this.scene, this.camera.perspectiveCamera);
-        // this.renderer.setScissorTest(false);
+        this.renderer.render(this.scene, this.camera.perspectiveCamera);
+        this.renderer.setScissorTest(false);
         
     }
 
