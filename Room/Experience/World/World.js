@@ -1,3 +1,5 @@
+// at the top of each file, need to put a summary of what each file does
+
 import * as THREE from 'three';
 import Experience from "../Experience.js"
 
